@@ -15,7 +15,11 @@ public class BookStore {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+       Book objBook = new Book("Teste", "Teste", "1234");
+       DVD objDvd = new DVD("Music", "Imagine Dragons");
+       
+       
     }
     
 }
