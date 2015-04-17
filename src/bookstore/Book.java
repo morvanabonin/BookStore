@@ -44,4 +44,10 @@ public class Book extends Product {
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
+    
+    @Override
+    public String getDescription() {
+        return "Autor: " + author + "\n"+ "Titulo: " + title;
+        
+    }
 }

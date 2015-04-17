@@ -12,11 +12,30 @@ package bookstore;
  */
 public class DVD extends Product {
     
-    private String genre;
+    private String type;
     private String title;
+    private String genre;    
     
-    public DVD(String genre, String title) {
+    public DVD(String type, String title, String genre) {
+        this.type = type;
         this.title = title;
+        this.genre = genre;
+    }
+    
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getGenre() {
@@ -26,12 +45,9 @@ public class DVD extends Product {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    
+    @Override
+    public String getDescription() {
+        return "Type: " + type + "\n" + "Titulo: " + title;
     }
 }

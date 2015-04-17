@@ -14,8 +14,6 @@ public class Product {
     
     private double price;
     private int quantity;
-    
-    //TO DO list of products (array) here
 
     public double getPrice() {
         return price;
@@ -33,7 +31,7 @@ public class Product {
         this.quantity = quantity;
     }
     
-    public String description(){
+    public String getDescription(){
         return "Some product description";
     }
 }

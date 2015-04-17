@@ -14,11 +14,12 @@ public class Electronic extends Product {
     
     private String type;
     private String brand_name;
-    private String description;
+    private String detailing;
     
-    public Electronic(String type, String brand_name) {
+    public Electronic(String type, String brand_name, String detailing) {
         this.type = type;
         this.brand_name = brand_name;
+        this.detailing = detailing;
     }
 
     public String getType() {
@@ -37,12 +38,17 @@ public class Electronic extends Product {
         this.brand_name = brand_name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDetailing() {
+        return detailing;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDetailing(String detailing) {
+        this.detailing = detailing;
+    }
+    
+    @Override
+    public String getDescription() {
+        return "Tipo: " + type + "\n" + "Marca: " + brand_name + "\n" + "Descrição: " + detailing;
     }
 
 }

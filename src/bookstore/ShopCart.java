@@ -7,9 +7,31 @@
 package bookstore;
 
 /**
- *
+ * 
  * @author Morvana Bonin
  */
 public class ShopCart {
+    
+    Product[] products = new Product[3];
+    
+    public void listProducts(Product[] products) {
+        for ( Product product : products) {
+            this.getTypeProducts(product);
+            System.out.println(product.getDescription());
+            System.out.println("=======================");
+        }
+    }
+    
+    public void getTypeProducts(Product product) {
+        
+        System.out.print("Produto: ");
+        if(product instanceof Book) {
+            System.out.println("Livro");
+        } else if (product instanceof DVD) {
+            System.out.println("DVD");
+        } else {
+            System.out.println("Eletrônico");
+        }
+    }
     
 }
