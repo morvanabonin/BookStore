@@ -64,4 +64,8 @@ public class Client {
         this.address = address;
     }
     
+    public String getClient() {
+        return "Cliente dados: " + "\n" + "Nome: " + name + "\n" + "Email: " + email;
+    }
+    
 }

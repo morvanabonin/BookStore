@@ -24,6 +24,9 @@ public class BookStore {
 
         ShopCart obj = new ShopCart();
         obj.listProducts(products);
+        
+        Client objClient = new Client("Romeu Bartollo", "94582450058", "romeu.bartollo@gmail.com", "Rua do Arvoredo");
+        System.out.println(objClient.getClient());
        
        
     }
