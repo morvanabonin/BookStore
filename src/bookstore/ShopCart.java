@@ -12,17 +12,15 @@ package bookstore;
  */
 public class ShopCart {
     
-    Product[] products = new Product[3];
-    
     public void listProducts(Product[] products) {
         for ( Product product : products) {
-            this.getTypeProducts(product);
+            this._getTypeProducts(product);
             System.out.println(product.getDescription());
             System.out.println("=======================");
         }
     }
     
-    public void getTypeProducts(Product product) {
+    private void _getTypeProducts(Product product) {
         
         System.out.print("Produto: ");
         if(product instanceof Book) {

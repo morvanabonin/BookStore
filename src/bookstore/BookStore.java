@@ -20,7 +20,7 @@ public class BookStore {
         DVD objDvd = new DVD("Music", "Imagine Dragons", "Rock");
         Electronic objElectronic = new Electronic("Celular", "LG", "Moto X");
        
-        Product [] products = {objBook, objDvd, objElectronic};
+        Product[] products = {objBook, objDvd, objElectronic};
 
         ShopCart obj = new ShopCart();
         obj.listProducts(products);
