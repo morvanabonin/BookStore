@@ -17,7 +17,7 @@ public class BookStore {
         Electronic objElectronic = new Electronic("Celular", "LG", "Moto X");
        
         Product[] products = {objBook, objDvd, objElectronic};
-
+        
         ShopCart obj = new ShopCart();
         obj.listProducts(products);
         

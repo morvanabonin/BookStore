@@ -11,6 +11,7 @@ public class ShopCart {
         for ( Product product : products) {
             ShopCart._getTypeProducts(product);
             System.out.println(product.getDescription());
+            System.out.println(product.getQuantity());
             System.out.println("=======================");
         }
     }

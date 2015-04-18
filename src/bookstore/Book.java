@@ -11,6 +11,10 @@ public class Book extends Product {
     private String author;
     private String ISBN;
     
+    public Book() {
+        super();
+    }
+    
     public Book(String title, String author, String ISBN) {
         this.title = title;
         this.author = author;
@@ -36,7 +40,7 @@ public class Book extends Product {
     public String getISBN() {
         return ISBN;
     }
-
+    
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
@@ -44,6 +48,11 @@ public class Book extends Product {
     @Override
     public String getDescription() {
         return "Autor: " + author + "\n"+ "Titulo: " + title;
-        
     }
+    
+    @Override
+    public int getQuantity() {
+        return this.quantity--;
+    }
+
 }

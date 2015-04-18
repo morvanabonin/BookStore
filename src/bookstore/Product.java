@@ -8,22 +8,18 @@ package bookstore;
 public class Product {
     
     private double price;
-    private int quantity;
+    int quantity;
+    
+    public Product() {
+        this.quantity = 3;
+    }
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        return this.quantity--;
     }
     
     public String getDescription(){

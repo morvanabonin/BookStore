@@ -10,6 +10,10 @@ public class Electronic extends Product {
     private String type;
     private String brand_name;
     private String detailing;
+   
+    public Electronic() {
+        super();
+    }
     
     public Electronic(String type, String brand_name, String detailing) {
         this.type = type;
@@ -44,6 +48,11 @@ public class Electronic extends Product {
     @Override
     public String getDescription() {
         return "Tipo: " + type + "\n" + "Marca: " + brand_name + "\n" + "Descrição: " + detailing;
+    }
+    
+    @Override
+    public int getQuantity() {
+        return this.quantity--;
     }
 
 }
