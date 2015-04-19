@@ -27,7 +27,10 @@ public class Product {
     }
     
     public int getStock() {
-        return --this.quantity;
+        if (quantity > 0) {
+            this.quantity = --quantity;
+        } 
+        return this.quantity;
     }
     
     public String getDescription(){

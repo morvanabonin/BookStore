@@ -30,17 +30,17 @@ public class BookStore {
          * Create a list of products with array
          */
         Product[] products = {book, dvd};
-        
-        /**
-         * Call static method 
-         */
-        Purchase.shopChart(products);
-        Purchase.getTotal(products);
        
         /**
          * Instace of Client 
          */
         Client client = new Client("Romeu Bartollo", "94582450058", "romeu.bartollo@gmail.com", "Rua do Arvoredo");
+        System.out.println("Compra :");
+        System.out.println(client.getClient());
+        System.out.println("___________________________");
         Purchase.purchase(products, client);
+        Purchase.paymentForm(1);
+        
+        
     }
 }

@@ -7,14 +7,27 @@ package bookstore;
  */
 public class Purchase {
     
-    public static void shopChart(Product[] products) {
+    public static final int CREDID_CARD = 1;
+    public static final int BANK_SLIP = 2;
+    
+    public static void purchase(Product[] products, Client client) {
+        Purchase._shopChart(products);
+        Purchase._getTotal(products);
+    }
+    
+    private static void _shopChart(Product[] products) {
         System.out.println("Lista deprodutos do carrinho de compras");
         
         for (Product product : products) {
             
             Purchase._getTypeProducts(product);
-            System.out.println(product.getDescription());
-            System.out.println(product.getPrice());
+            if (product.getStock() == 0 ) {
+                System.out.println("Não há produto em estoque");
+            } else {
+                System.out.println(product.getDescription());
+                System.out.println(product.getPrice());
+            }
+            
             System.out.println("__________________________");
         }
         
@@ -31,7 +44,7 @@ public class Purchase {
         }
     }
     
-    public static void getTotal(Product[] products) {
+    private static void _getTotal(Product[] products) {
         double count = 0;
                 
         for ( Product  p: products) {
@@ -41,9 +54,14 @@ public class Purchase {
         
     }
     
-    public static void purchase(Product[] products, Client client) {
-        
+    public static void paymentForm(int paymentForm) {
+        if (paymentForm == CREDID_CARD) {
+            System.out.println("Pagamento com Cartão de Crédito");
+        } else if (paymentForm == BANK_SLIP) {
+            System.out.println("Pagamento com Boleto");
+        }
     }
+    
     
 }
 
