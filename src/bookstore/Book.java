@@ -10,7 +10,6 @@ public class Book extends Product {
     private String title;
     private String author;
     private String ISBN;
-    private int quantity = 3;
     
     public Book() {
         super();
@@ -50,5 +49,5 @@ public class Book extends Product {
     public String getDescription() {
         return "Autor: " + author + "\n"+ "Titulo: " + title;
     }
-
+    
 }

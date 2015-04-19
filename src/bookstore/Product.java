@@ -14,11 +14,19 @@ public class Product {
         return price;
     }
     
-    public void setQuantity() {
-        
+    public void setPrice(double price) {
+        this.price = price;
     }
-
+    
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    
     public int getQuantity() {
+        return quantity;
+    }
+    
+    public int getStock() {
         return --this.quantity;
     }
     

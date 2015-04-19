@@ -6,27 +6,41 @@ package bookstore;
  * @author Morvana
  */
 public class BookStore {
-    private static Object PaymentForms;
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
-        Purchase.PaymentForms.credicard = Purchase.PaymentForms.CREDIDCARD;
-       
-        Book objBook = new Book("O poder cósmico do homem", "Vernon Howard", "1234");
-        DVD objDvd = new DVD("Music", "Imagine Dragons", "Rock");
-        Electronic objElectronic = new Electronic("Celular", "LG", "Moto X");
-       
-        Product[] products = {objBook, objDvd, objElectronic};
+        /**
+         * Objetos instances and add new Book, DVD and Eletronic
+         */
+        Book book = new Book("O poder cósmico do homem", "Vernon Howard", "1234");
+        book.setQuantity(5);
+        book.setPrice(30.00);
         
-        ShopCart obj = new ShopCart();
-        obj.listProducts(products);
+        DVD dvd = new DVD("Music", "Imagine Dragons", "Rock");
+        dvd.setQuantity(3);
+        dvd.setPrice(35.00);
         
-        Client objClient = new Client("Romeu Bartollo", "94582450058", "romeu.bartollo@gmail.com", "Rua do Arvoredo");
-        System.out.println(objClient.getClient());
+        Electronic electronic = new Electronic("Celular", "LG", "Moto X");
+        electronic.setQuantity(2);
+        electronic.setPrice(1200.00);
+        
+        /**
+         * Create a list of products with array
+         */
+        Product[] products = {book, dvd};
+        
+        /**
+         * Call static method 
+         */
+        Purchase.shopChart(products);
+        Purchase.getTotal(products);
        
+        /**
+         * Instace of Client 
+         */
+        Client client = new Client("Romeu Bartollo", "94582450058", "romeu.bartollo@gmail.com", "Rua do Arvoredo");
+        Purchase.purchase(products, client);
     }
-    
 }

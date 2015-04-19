@@ -10,7 +10,6 @@ public class Electronic extends Product {
     private String type;
     private String brand_name;
     private String detailing;
-    private int quantity = 4;
    
     public Electronic() {
         super();

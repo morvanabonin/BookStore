@@ -10,7 +10,6 @@ public class DVD extends Product {
     private String type;
     private String title;
     private String genre;  
-    private int quantity = 5;
    
     public DVD() {
         super();
