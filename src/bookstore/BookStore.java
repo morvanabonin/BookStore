@@ -6,11 +6,14 @@ package bookstore;
  * @author Morvana
  */
 public class BookStore {
+    private static Object PaymentForms;
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Purchase.PaymentForms.credicard = Purchase.PaymentForms.CREDIDCARD;
        
         Book objBook = new Book("O poder cósmico do homem", "Vernon Howard", "1234");
         DVD objDvd = new DVD("Music", "Imagine Dragons", "Rock");
@@ -23,7 +26,6 @@ public class BookStore {
         
         Client objClient = new Client("Romeu Bartollo", "94582450058", "romeu.bartollo@gmail.com", "Rua do Arvoredo");
         System.out.println(objClient.getClient());
-       
        
     }
     

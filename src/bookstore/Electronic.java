@@ -10,6 +10,7 @@ public class Electronic extends Product {
     private String type;
     private String brand_name;
     private String detailing;
+    private int quantity = 4;
    
     public Electronic() {
         super();
@@ -48,11 +49,6 @@ public class Electronic extends Product {
     @Override
     public String getDescription() {
         return "Tipo: " + type + "\n" + "Marca: " + brand_name + "\n" + "Descrição: " + detailing;
-    }
-    
-    @Override
-    public int getQuantity() {
-        return this.quantity--;
     }
 
 }

@@ -9,7 +9,8 @@ public class DVD extends Product {
     
     private String type;
     private String title;
-    private String genre;   
+    private String genre;  
+    private int quantity = 5;
    
     public DVD() {
         super();
@@ -48,10 +49,5 @@ public class DVD extends Product {
     @Override
     public String getDescription() {
         return "Type: " + type + "\n" + "Titulo: " + title;
-    }
-    
-    @Override
-    public int getQuantity() {
-        return this.quantity--;
     }
 }
