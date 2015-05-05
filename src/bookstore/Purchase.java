@@ -21,11 +21,12 @@ public class Purchase {
         for (Product product : products) {
             
             Purchase._getTypeProducts(product);
-            if (product.getStock() == 0 ) {
+            System.out.println(product.getDescription());
+            if (product.getQuantity() == 0 ) {
                 System.out.println("Não há produto em estoque");
             } else {
-                System.out.println(product.getDescription());
                 System.out.println(product.getPrice());
+                product.getStock();
             }
             
             System.out.println("__________________________");
