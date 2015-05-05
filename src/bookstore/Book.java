@@ -11,10 +11,6 @@ public class Book extends Product {
     private String author;
     private String ISBN;
     
-    public Book() {
-        super();
-    }
-    
     public Book(String title, String author, String ISBN) {
         this.title = title;
         this.author = author;

@@ -6,9 +6,17 @@ package bookstore;
  * @author Morvana Bonin
  */
 public class Product {
-    
+
+    private String rawInfo;
     private double price;
     private int quantity;
+    
+    public Product(String rawInfo) {
+        this.rawInfo = rawInfo;
+    }
+    
+    public Product() {
+    }
     
     public double getPrice() {
         return price;

@@ -10,10 +10,6 @@ public class DVD extends Product {
     private String type;
     private String title;
     private String genre;  
-   
-    public DVD() {
-        super();
-    }
     
     public DVD(String type, String title, String genre) {
         this.type = type;

@@ -10,10 +10,6 @@ public class Electronic extends Product {
     private String type;
     private String brand_name;
     private String detailing;
-   
-    public Electronic() {
-        super();
-    }
     
     public Electronic(String type, String brand_name, String detailing) {
         this.type = type;

@@ -1,6 +1,10 @@
 
 package bookstore;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Class BookStore - main of system
  * @author Morvana
@@ -9,7 +13,7 @@ public class BookStore {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         /**
          * Objetos instances and add new Book, DVD and Eletronic
@@ -40,6 +44,10 @@ public class BookStore {
         System.out.println("___________________________");
         Purchase.purchase(products, client);
         Purchase.paymentForm(1);
+        
+        FileHandler file = new FileHandler();
+        file.readFile();
+             
         
         
     }
