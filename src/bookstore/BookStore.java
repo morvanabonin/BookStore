@@ -2,8 +2,6 @@
 package bookstore;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Class BookStore - main of system

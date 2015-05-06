@@ -25,8 +25,7 @@ public class FileHandler {
         
         if(file.exists()) {
             BufferedReader line = new BufferedReader(new FileReader(file));
-            line.readLine();
-            System.out.println(line);
+            System.out.println(line.readLine());
         }
         
     }   
