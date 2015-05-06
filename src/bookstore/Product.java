@@ -16,6 +16,7 @@ public class Product {
     }
     
     public Product() {
+        
     }
     
     public double getPrice() {

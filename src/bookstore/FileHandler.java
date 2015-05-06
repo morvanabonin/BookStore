@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  * Class to open and read files, return lines in objects
@@ -26,10 +25,11 @@ public class FileHandler {
         
         if(file.exists()) {
             BufferedReader line = new BufferedReader(new FileReader(file));
-            System.out.println(line.readLine());
+            line.readLine();
+            System.out.println(line);
         }
         
-    }
+    }   
 
     
 //    public Product[] readFile() throws java.lang.Exception {
