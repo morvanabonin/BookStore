@@ -29,7 +29,6 @@ public class FileHandler {
         }
         
     }   
-
     
 //    public Product[] readFile() throws java.lang.Exception {
 //            
