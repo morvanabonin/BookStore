@@ -1,2 +1,7 @@
-/build/
-/nbproject/private/
+.idea/
+BookStore.iml
+bookstore.properties
+bookstore.xml
+module_bookstore.xml
+out/
+build/
