@@ -11,7 +11,7 @@ public class BookStore {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         
         /**
          * Objetos instances and add new Book, DVD and Eletronic
