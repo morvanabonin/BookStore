@@ -14,8 +14,7 @@ public class BookStore {
      * @throws java.io.FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
-       //BookStoreController.executeAction();
+       BookStoreController.executeAction();
        
-       BookStoreController.manipulateFile();
     }
 }

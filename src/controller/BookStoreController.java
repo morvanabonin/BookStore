@@ -1,14 +1,12 @@
 
 package controller;
 
-import entity.Product;
 import entity.Client;
-import entity.Book;
-import entity.DVD;
-import entity.Electronic;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
+import model.BookModel;
+import model.DvdModel;
 
 /**
  * Class BookStoreController - main of system
@@ -22,26 +20,31 @@ public class BookStoreController {
 
     }
     
-    public static void executeAction() {
-	/**
-         * Objetos instances and add new Book, DVD and Eletronic
-         */
-        Book book = new Book("O poder cósmico do homem", "Vernon Howard", "1234");
-        book.setQuantity(5);
-        book.setPrice(30.00);
-        
-        DVD dvd = new DVD("Music", "Imagine Dragons", "Rock");
-        dvd.setQuantity(3);
-        dvd.setPrice(35.00);
-        
-        Electronic electronic = new Electronic("Celular", "LG", "Moto X");
-        electronic.setQuantity(2);
-        electronic.setPrice(1200.00);
-        
-        /**
-         * Create a list of products with array
-         */
-        Product[] products = {book, dvd};
+    public static void executeAction() throws FileNotFoundException, Exception {
+	
+	File dataFile = new File(System.getProperty("user.dir") + "/util/dados.csv");
+	
+	if(dataFile.isFile()){
+	    Scanner fileReader = new Scanner(dataFile).useDelimiter(";");
+	    if (fileReader.hasNext()) {
+		while (fileReader.hasNext()) {
+		    String type = fileReader.next();
+		    String data = fileReader.nextLine().replaceFirst(";", "");
+		    switch (type) {
+		    	case "livro":
+			    BookModel book = new BookModel();
+			    book.createBook(data);
+			    break;
+		    	case "dvd":
+			    DvdModel dvd = new DvdModel();
+			    dvd.createDvd(data);
+			    break;
+		    }
+
+		}
+		fileReader.close();
+	    }
+	}
        
         /**
          * Instace of Client 
@@ -50,16 +53,8 @@ public class BookStoreController {
         System.out.println("Compra :");
         System.out.println(client.getClient());
         System.out.println("___________________________");
-        PurchaseController.purchase(products, client);
+        //PurchaseController.purchase(products, client);
         PurchaseController.paymentForm(1);
 	
-    }
-    
-    public static void manipulateFile() throws FileNotFoundException {
-	
-	File dataFile = new File(System.getProperty("user.dir") + "/util/dados.csv");
-	System.out.println("Path : " + dataFile.getPath());
-        Scanner fileReader = new Scanner(dataFile);
-	System.out.println(fileReader.hasNext());
     }
 }
