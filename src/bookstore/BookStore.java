@@ -13,8 +13,8 @@ public class BookStore {
      * @param args the command line arguments
      * @throws java.io.FileNotFoundException
      */
-    public static void main(String[] args) throws FileNotFoundException {
-       BookStoreController.executeAction();
-       
+    public static void main(String[] args) throws FileNotFoundException, Exception {
+	BookStoreController bookstore = new BookStoreController();
+	bookstore.executeAction();
     }
 }

@@ -2,6 +2,7 @@
 package model;
 
 import entity.DVD;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Scanner;
  */
 public class DvdModel {
     
-    public DVD createDvd(String data) throws Exception {
+    public DVD createDvd(String data) throws FileNotFoundException, Exception {
 	if(data.isEmpty()) {
 	    throw new Exception("Data cannot be empty");
 	}
@@ -19,7 +20,7 @@ public class DvdModel {
 	String type = dt.next();
 	String title = dt.next();
 	String genre = dt.next();
-	System.out.println(title);
+	dt.close();
 	DVD dvd = new DVD(type, title, genre); 
 	return dvd;
     }

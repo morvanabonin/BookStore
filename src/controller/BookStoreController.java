@@ -20,7 +20,7 @@ public class BookStoreController {
 
     }
     
-    public static void executeAction() throws FileNotFoundException, Exception {
+    public void executeAction() throws FileNotFoundException, Exception {
 	
 	File dataFile = new File(System.getProperty("user.dir") + "/util/dados.csv");
 	
@@ -40,9 +40,8 @@ public class BookStoreController {
 			    dvd.createDvd(data);
 			    break;
 		    }
-
+		    fileReader.close();
 		}
-		fileReader.close();
 	    }
 	}
        
