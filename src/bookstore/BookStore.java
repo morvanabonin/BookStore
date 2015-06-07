@@ -2,6 +2,7 @@
 package bookstore;
 
 import controller.BookStoreController;
+import java.io.FileNotFoundException;
 
 /**
  * Class BookStore - main of system
@@ -10,8 +11,11 @@ import controller.BookStoreController;
 public class BookStore {
     /**
      * @param args the command line arguments
+     * @throws java.io.FileNotFoundException
      */
-    public static void main(String[] args) {
-       BookStoreController.executeAction();
+    public static void main(String[] args) throws FileNotFoundException {
+       //BookStoreController.executeAction();
+       
+       BookStoreController.manipulateFile();
     }
 }

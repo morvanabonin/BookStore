@@ -6,6 +6,9 @@ import entity.Client;
 import entity.Book;
 import entity.DVD;
 import entity.Electronic;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 /**
  * Class BookStoreController - main of system
@@ -49,5 +52,14 @@ public class BookStoreController {
         System.out.println("___________________________");
         PurchaseController.purchase(products, client);
         PurchaseController.paymentForm(1);
+	
+    }
+    
+    public static void manipulateFile() throws FileNotFoundException {
+	
+	File dataFile = new File(System.getProperty("user.dir") + "/util/dados.csv");
+	System.out.println("Path : " + dataFile.getPath());
+        Scanner fileReader = new Scanner(dataFile);
+	System.out.println(fileReader.hasNext());
     }
 }
