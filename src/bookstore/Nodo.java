@@ -12,7 +12,7 @@ public class Nodo {
     /**
      * The element of list is a object of Product
      */
-    private Product element;
+    private String element;
     
     /**
      * Indicates the previous reference of a list node
@@ -24,16 +24,17 @@ public class Nodo {
      */
     private Nodo next;
     
-    public Nodo(Nodo previous, Nodo next, Product element) {
+    public Nodo(Nodo previous, Nodo next, String element) {
         this.previous = previous;
         this.next = next;
+        this.element = element;
     }
     
-    public Product getElement() {
+    public String getElement() {
         return element;
     }
 
-    public void setElement(Product element) {
+    public void setElement(String element) {
         this.element = element;
     }
 

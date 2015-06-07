@@ -45,8 +45,6 @@ public class BookStore {
         
         FileHandler file = new FileHandler();
         file.readFile();
-             
-        
-        
+
     }
 }

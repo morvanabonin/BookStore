@@ -13,7 +13,6 @@ public class DoublyLinkedList {
 
     private Nodo first = null;
     private Nodo last = null;
-    private int totalDeElementos;
 
     /**
      * Returns the first nodo of the list
@@ -21,7 +20,7 @@ public class DoublyLinkedList {
      * @return first
      */
     public Nodo getFirst() {
-	return first;
+	   return first;
     }
 
     /**
@@ -30,7 +29,7 @@ public class DoublyLinkedList {
      * @param first
      */
     public void setFirst(Nodo first) {
-	this.first = first;
+	   this.first = first;
     }
 
     /**
@@ -39,7 +38,7 @@ public class DoublyLinkedList {
      * @return last
      */
     public Nodo getLast() {
-	return last;
+	   return last;
     }
 
     /**
@@ -48,11 +47,11 @@ public class DoublyLinkedList {
      * @param last
      */
     public void setLast(Nodo last) {
-	this.last = last;
+	   this.last = last;
     }
 
     public void add(Product element) {
-
+        
     }
 
 }
