@@ -1,4 +1,4 @@
-package bookstore;
+package entity;
 
 /**
  * Class Product

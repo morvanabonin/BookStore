@@ -1,18 +1,23 @@
 
-package bookstore;
+package controller;
+
+import entity.Product;
+import entity.Client;
+import entity.Book;
+import entity.DVD;
 
 /**
  *
  * @author morvanabonin
  */
-public class Purchase {
+public class PurchaseController {
     
     public static final int CREDID_CARD = 1;
     public static final int BANK_SLIP = 2;
     
     public static void purchase(Product[] products, Client client) {
-        Purchase._shopChart(products);
-        Purchase._getTotal(products);
+        PurchaseController._shopChart(products);
+        PurchaseController._getTotal(products);
     }
     
     private static void _shopChart(Product[] products) {
@@ -20,7 +25,7 @@ public class Purchase {
         
         for (Product product : products) {
             
-            Purchase._getTypeProducts(product);
+            PurchaseController._getTypeProducts(product);
             System.out.println(product.getDescription());
             if (product.getQuantity() == 0 ) {
                 System.out.println("Não há produto em estoque");
