@@ -158,6 +158,31 @@ public class AVLTree {
 	
 	return right;
     }
+    
+    public Node leftRotation(Node init) {
+	Node left = init.getLeft();
+	left.setDaddy(left.getDaddy());
+	
+	init.setLeft(left.getRight());
+	
+	if (init.getLeft() != null) {
+	    init.getLeft().setDaddy(init);
+	}
+	
+	left.setRight(init);
+	init.setDaddy(left);
+	
+	if (left.getDaddy().getRight() == init) {
+	    left.getDaddy().setRight(left);
+	} else if (left.getDaddy().getLeft() == init) {
+	    left.getDaddy().setLeft(left);
+	}
+	
+	setBalancing(init);
+	setBalancing(left);
+	
+	return left;
+    }
 
     private int height(Node current) {
 	if (current == null) {
