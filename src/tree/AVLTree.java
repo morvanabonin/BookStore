@@ -48,8 +48,22 @@ public class AVLTree {
 	
 	if (balancing == -2) {
 	    if(height(current.getLeft().getLeft()) >= height(current.getLeft().getRight())) {
-		
+		current = rightRotation(current);
+	    } else {
+		current = doubleLeftRightRotation(current);
 	    }
+	} else if(balancing == 2) {
+	    if(height(current.getRight().getRight()) >= height(current.getRight().getLeft())) {
+		current = leftRotation(root);
+	    } else {
+		current = doubleRightLeftRotation(current);
+	    }
+	}
+	
+	if(current.getDaddy() != null) {
+	    verifyBalancig(current.getDaddy());
+	} else {
+	    this.root = current;
 	}
     }
     
@@ -182,6 +196,16 @@ public class AVLTree {
 	setBalancing(left);
 	
 	return left;
+    }
+    
+    public Node doubleLeftRightRotation(Node init) {
+	init.setLeft(leftRotation(init.getLeft()));
+	return rightRotation(init);
+    }
+    
+    public Node doubleRightLeftRotation(Node init) {
+	init.setRight(rightRotation(init.getRight()));
+	return leftRotation(init);
     }
 
     private int height(Node current) {
