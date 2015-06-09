@@ -53,6 +53,29 @@ public class AVLTree {
 	}
     }
     
+    public void remove(int k) {
+	removeAVL(this.root, k);
+    }
+    
+    public void removeAVL(No current, int k) {
+	if(current == null) {
+	    return;
+	} else {
+	    
+	    if(current.getKey() > k) {
+		removeAVL(current.getLeft(), k);
+	    } else if (current.getKey() < k) {
+		removeAVL(current.getRight(), k);
+	    } else if (current.getKey() == k) {
+		removeFoundNo(current);
+	    }
+	}
+    }
+    
+    public void removeFoundNo(No toRemove) {
+	
+    }
+    
     public No rightRotation(No init) {
 	
 	No right = init.getRight();
