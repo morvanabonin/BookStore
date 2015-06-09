@@ -7,14 +7,14 @@ package tree;
  */
 public class AVLTree {
     
-    private No root;
+    private Node root;
     
     public void insert(int k) {
-	No no = new No(k);
+	Node no = new Node(k);
 	insertAVL(this.root, no);
     }
     
-    public void insertAVL(No toCompare, No toInsert) {
+    public void insertAVL(Node toCompare, Node toInsert) {
 	
 	/**
 	 * If compare equals null the root receive toInsert
@@ -42,7 +42,7 @@ public class AVLTree {
 	}
     }
 
-    private void verifyBalancig(No current) {
+    private void verifyBalancig(Node current) {
 	setBalancing(current);
 	int balancing = current.getBalancing();
 	
@@ -57,7 +57,7 @@ public class AVLTree {
 	removeAVL(this.root, k);
     }
     
-    public void removeAVL(No current, int k) {
+    public void removeAVL(Node current, int k) {
 	if(current == null) {
 	    return;
 	} else {
@@ -72,13 +72,13 @@ public class AVLTree {
 	}
     }
     
-    public void removeFoundNo(No toRemove) {
+    public void removeFoundNo(Node toRemove) {
 	
     }
     
-    public No rightRotation(No init) {
+    public Node rightRotation(Node init) {
 	
-	No right = init.getRight();
+	Node right = init.getRight();
 	right.setDaddy(init.getDaddy());
 	
 	init.setRight(right.getLeft());
@@ -105,7 +105,7 @@ public class AVLTree {
 	return right;
     }
 
-    private int height(No current) {
+    private int height(Node current) {
 	if (current == null) {
 	    return -1;
 	}
@@ -121,7 +121,7 @@ public class AVLTree {
 	}
     }
     
-    private void setBalancing(No no) {
+    private void setBalancing(Node no) {
 	no.setBalancing(height(no.getRight()) - height(no.getLeft()));
     }
 
