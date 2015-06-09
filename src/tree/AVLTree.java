@@ -67,13 +67,67 @@ public class AVLTree {
 	    } else if (current.getKey() < k) {
 		removeAVL(current.getRight(), k);
 	    } else if (current.getKey() == k) {
-		removeFoundNo(current);
+		removeFoundNode(current);
 	    }
 	}
     }
     
-    public void removeFoundNo(Node toRemove) {
+    public void removeFoundNode(Node toRemove) {
+	Node r;
 	
+	if (toRemove.getLeft() == null || toRemove.getRight() == null) {
+	    if(toRemove.getDaddy() == null) {
+		this.root = null;
+		toRemove = null;
+		return;
+	    }
+	    r= toRemove;
+	} else {
+	    r = successor(toRemove);
+	    toRemove.setKey(r.getKey());
+	}
+	
+	Node p;
+	
+	if(r.getLeft() != null) {
+	    p = r.getLeft();
+	} else {
+	    p = r.getRight();
+	}
+	
+	if(p != null) {
+	    p.setDaddy(p.getDaddy());
+	}
+	
+	if(r.getDaddy() == null) {
+	    this.root = p;
+	} else {
+	    if (r == r.getDaddy().getLeft()) {
+		r.getDaddy().setLeft(p);
+	    } else {
+		r.getDaddy().setRight(p);
+	    }
+	}
+	
+	r = null;
+
+    }
+    
+    private Node successor(Node q) {
+	if (q.getRight() != null) {
+		Node r = q.getRight();
+		while (r.getLeft()!= null) {
+			r = r.getLeft();
+		}
+		return r;
+	} else {
+		Node p = q.getDaddy();
+		while (p != null && q == p.getRight()) {
+			q = p;
+			p = q.getDaddy();
+		}
+		return p;
+	}
     }
     
     public Node rightRotation(Node init) {
