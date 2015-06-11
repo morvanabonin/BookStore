@@ -16,12 +16,15 @@ public class BookModel {
 	    throw new Exception("Data cannot be empty");
 	}
 	
-	Scanner dt = new Scanner(data).useDelimiter(";");
-	System.out.println(data);
-	String title = dt.next();
-	String author = "Não tem!";
-	String ISBN = dt.next();
-	dt.close();
+	String title;
+	String author;
+	String ISBN;
+	try (Scanner dt = new Scanner(data).useDelimiter(";")) {
+	    System.out.println(data);
+	    title = dt.next();
+	    author = "Não tem!";
+	    ISBN = dt.next();
+	}
 	System.out.println(title);
 	Book book = new Book(title, author, ISBN); 
 	return book;

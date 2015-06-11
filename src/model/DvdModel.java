@@ -16,11 +16,14 @@ public class DvdModel {
 	    throw new Exception("Data cannot be empty");
 	}
 	
-	Scanner dt = new Scanner(data).useDelimiter(";");
-	String type = dt.next();
-	String title = dt.next();
-	String genre = dt.next();
-	dt.close();
+	String type;
+	String title;
+	String genre;
+	try (Scanner dt = new Scanner(data).useDelimiter(";")) {
+	    type = dt.next();
+	    title = dt.next();
+	    genre = dt.next();
+	}
 	DVD dvd = new DVD(type, title, genre); 
 	return dvd;
     }
