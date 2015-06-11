@@ -25,11 +25,11 @@ public class BookStoreController {
 	File dataFile = new File(System.getProperty("user.dir") + "/util/dados.csv");
 	
 	if(dataFile.isFile()){
-	    Scanner fileReader = new Scanner(dataFile).useDelimiter(";");
-	    if (fileReader.hasNext()) {
+	    Scanner fileReader = new Scanner(dataFile);
+	    fileReader.useDelimiter(";");
 		while (fileReader.hasNext()) {
 		    String type = fileReader.next();
-		    String data = fileReader.nextLine().replaceFirst(";", "");
+		    String data = fileReader.nextLine().replace(";;", " ");
 		    switch (type) {
 		    	case "livro":
 			    BookModel book = new BookModel();
@@ -40,9 +40,8 @@ public class BookStoreController {
 			    dvd.createDvd(data);
 			    break;
 		    }
-		    fileReader.close();
 		}
-	    }
+	    fileReader.close();
 	}
        
         /**

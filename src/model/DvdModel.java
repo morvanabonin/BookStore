@@ -16,7 +16,7 @@ public class DvdModel {
 	    throw new Exception("Data cannot be empty");
 	}
 	
-	Scanner dt = new Scanner(data).useDelimiter("\\;+");
+	Scanner dt = new Scanner(data).useDelimiter(";");
 	String type = dt.next();
 	String title = dt.next();
 	String genre = dt.next();
